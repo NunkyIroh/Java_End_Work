@@ -25,4 +25,8 @@ class Toy implements Comparable<Toy> {
         return weight;
     }
     
+    @Override
+    public int compareTo(Toy other) {
+        return Integer.compare(weight, other.weight);
+    }
 }
