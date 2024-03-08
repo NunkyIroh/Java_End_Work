@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class ToyStore {
 
+    private static final int NUM_GETS = 10;
+
     public static void main(String[] args) {
         Toy[] toys = {
             new Toy(1, "Конструктор", 20),
