@@ -13,5 +13,16 @@ class Toy implements Comparable<Toy> {
         this.name = name;
         this.weight = weight;
     }
+    public int getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+    
 }
