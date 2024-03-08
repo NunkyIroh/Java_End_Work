@@ -5,6 +5,32 @@ import java.util.Random;
 
 public class ToyStore {
 
+    public static void main(String[] args) {
+        Toy[] toys = {
+            new Toy(1, "Конструктор", 20),
+            new Toy(2, "Робот", 20),
+            new Toy(3, "Кукла", 60)
+        };
+
+        PriorityQueue<Toy> toyQueue = new PriorityQueue<>();
+        for (Toy toy : toys) {
+            toyQueue.offer(toy);
+        }
+
+        try {
+            FileWriter writer = new FileWriter("output.txt");
+            Random random = new Random();
+            for (int i = 0; i < NUM_GETS; i++) {
+                Toy toy = getRandomToy(toyQueue, random);
+                writer.write(toy.getId() + "\n");
+            }
+            writer.close();
+            System.out.println("Values written to file successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static Toy getRandomToy(PriorityQueue<Toy> toyQueue, Random random) {
         int totalWeight = 0;
         for (Toy toy : toyQueue) {
